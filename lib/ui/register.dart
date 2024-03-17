@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:saeapplicationmobile/main.dart';
@@ -94,8 +95,17 @@ class _RegisterUIState extends State<RegisterUI> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     ElevatedButton(
-                      onPressed: () async {
-                        await signIn();
+                      onPressed: ()  async {
+                        bool inscription = await userBD.signUp(firstNameController.text, lastNameController.text,
+                            loginController.text, passwordController.text, confirmPasswordController.text);
+                        if(inscription){
+                          context.go('/home');
+                        }
+                        else{
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('Failed to sign up')),
+                          );
+                        }
                       },
                       child: const Text('Valider inscription'),
                     ),
