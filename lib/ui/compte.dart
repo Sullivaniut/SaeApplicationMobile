@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:saeapplicationmobile/main.dart';
+import 'package:saeapplicationmobile/ui/bottomtoolsbar.dart';
 import 'package:saeapplicationmobile/ui/header.dart';
-import 'bottomtoolsbar.dart';
 
 
 
-class HomeUI extends StatefulWidget {
+class CompteUI extends StatefulWidget {
+  const CompteUI({Key? key}) : super(key: key);
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _CompteUIState createState() => _CompteUIState();
 }
 
-class _MyHomePageState extends State<HomeUI> {
-  int _currentIndex = 0;
+class _CompteUIState extends State<CompteUI> {
+  int _currentIndex = 4;
 
   void _onItemTapped(int index) {
     setState(() {
