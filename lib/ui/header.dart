@@ -1,10 +1,15 @@
 
 import 'package:flutter/material.dart';
 
-class HeaderUI extends AppBar{
-  const HeaderUI({super.key});
+class HeaderUI extends StatelessWidget implements PreferredSizeWidget {
+  @override
+  Size get preferredSize => const Size.fromHeight(100);
   @override
   Widget build(BuildContext context) {
-    throw UnimplementedError();
+    return AppBar(
+      title: const Text("Application All'O"),
+      backgroundColor: Colors.blue,
+      centerTitle: true,
+    );
   }
 }
